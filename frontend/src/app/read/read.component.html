@@ -1,0 +1,30 @@
+<div class="container mt-3">
+
+    <div *ngIf="successMsg" class="alert alert-success alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{successMsg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let user of readUser">
+          <tr>
+            <th scope="row">{{user.Id}}</th>
+            <td>{{user.fullname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td><button class="btn btn-danger" (click)="DeleteId(user.Id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
